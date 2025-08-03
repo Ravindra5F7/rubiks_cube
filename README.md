@@ -52,13 +52,108 @@ This drastically reduces the solution search space and provides near-optimal mov
     cd rubiks_cube
     ```
 
-2. **Install dependencies**
+2. 🐍 Set Up Backend
 
-    ```bash
-    pip install -r requirements.txt
-    ```
+```bash
+# Create virtual environment
+python -m venv venv
+
+# Activate the environment
+# On Windows:
+.\venv\Scripts\activate
+# On macOS/Linux:
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Start the Flask server
+python backend/app.py
+```
 
 ---
+
+3. 🌐 Set Up Frontend
+
+```bash
+cd frontend
+npm install
+npm start
+```
+
+* The frontend React app will run at: [http://localhost:3000](http://localhost:3000)
+* It will connect to the Flask backend (default: [http://localhost:5000](http://localhost:5000))
+
+---
+
+### ✅ Run the Scramble Generator
+
+```bash
+python generate_scramble.py
+```
+
+* This will output a random valid Rubik’s Cube scramble.
+* Useful for testing both CLI and web solver interfaces.
+
+---
+
+### ✅ Solve Cube via Command Line
+
+```bash
+python main.py
+```
+
+* Prompts the user to enter the cube’s state.
+* Returns the optimal sequence of moves to solve it using the Kociemba algorithm.
+
+
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 🙌 Acknowledgements
+
+* [Kociemba Algorithm](http://kociemba.org/)
+* [pycuber](https://github.com/adrianliaw/pycuber) for scramble logic
+
+````
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### 🔧 Usage
 
