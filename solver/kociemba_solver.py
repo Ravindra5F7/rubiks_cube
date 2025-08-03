@@ -18,6 +18,16 @@ class KociembaSolver:
         try:
             cube_string = self._generate_kociemba_string()
             print(f"Generated Kociemba String: {cube_string}")
+            print(f"Kociemba String Length: {len(cube_string)}")
+            
+            # Validate the cube string before sending to kociemba
+            if len(cube_string) != 54:
+                raise Exception(f"Invalid cube string length: {len(cube_string)}, expected 54")
+            
+            valid_chars = set('URFDLB')
+            invalid_chars = set(cube_string) - valid_chars
+            if invalid_chars:
+                raise Exception(f"Invalid characters in cube string: {invalid_chars}")
             
             self.solution_moves = kociemba.solve(cube_string)
             return self.solution_moves
@@ -33,15 +43,15 @@ class KociembaSolver:
         
         The required order is U-R-F-D-L-B (Up, Right, Front, Down, Left, Back).
         """
-        # Map our cube's center colors to the Kociemba library's face names (U, R, F, etc.)
-        # This mapping is based on the center piece of each face in our solved state.
-        kociemba_face_map = {
-            self.cube.faces[UP][1][1]: 'U',
-            self.cube.faces[RIGHT][1][1]: 'R',
-            self.cube.faces[FRONT][1][1]: 'F',
-            self.cube.faces[DOWN][1][1]: 'D',
-            self.cube.faces[LEFT][1][1]: 'L',
-            self.cube.faces[BACK][1][1]: 'B'
+        # Direct mapping of colors to Kociemba face names for a standard color scheme
+        # W (White) -> U, Y (Yellow) -> D, O (Orange) -> L, R (Red) -> R, G (Green) -> F, B (Blue) -> B
+        color_to_face_map = {
+            WHITE: 'U',
+            YELLOW: 'D',
+            ORANGE: 'L',
+            RED: 'R',
+            GREEN: 'F',
+            BLUE: 'B'
         }
 
         face_order = [UP, RIGHT, FRONT, DOWN, LEFT, BACK]
@@ -50,6 +60,6 @@ class KociembaSolver:
         for face_name in face_order:
             for row in self.cube.faces[face_name]:
                 for sticker_color in row:
-                    cubestring += kociemba_face_map[sticker_color]
+                    cubestring += color_to_face_map[sticker_color]
         
         return cubestring
