@@ -1,6 +1,6 @@
 **Rubik's Cube Solver**
 
-````markdown
+
 # 🧩 Rubik's Cube Solver
 
 A fast and optimal command-line application to solve any valid scrambled 3x3x3 Rubik's Cube using the **Kociemba two-phase algorithm**. This project was developed as a submission for the **Aero Hack Challenge**.
@@ -37,7 +37,7 @@ This drastically reduces the solution search space and provides near-optimal mov
 
 ---
 
-## 🚀 Getting Started
+### 🚀 Getting Started
 
 ### ✅ Prerequisites
 
@@ -60,7 +60,7 @@ This drastically reduces the solution search space and provides near-optimal mov
 
 ---
 
-## 🔧 Usage
+### 🔧 Usage
 
 ### 🔁 Generate a Scramble
 
@@ -69,6 +69,7 @@ To test the solver with a valid scramble:
 ```bash
 python generate_scramble.py
 ````
+---
 
 ### 🧮 Run the Solver
 
