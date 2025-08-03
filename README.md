@@ -86,6 +86,7 @@ npm start
 
 ---
 
+### Functionality Testing
 ### ✅ Run the Scramble Generator
 
 ```bash
@@ -118,63 +119,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 * [Kociemba Algorithm](http://kociemba.org/)
 * [pycuber](https://github.com/adrianliaw/pycuber) for scramble logic
-
-````
----
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### 🔧 Usage
-
-### 🔁 Generate a Scramble
-
-To test the solver with a valid scramble:
-
-```bash
-python generate_scramble.py
-````
----
-
-### 🧮 Run the Solver
-
-Run the main program and follow the prompts to enter your cube's state:
-
-```bash
-python main.py
-```
-
-The program will then display the steps required to solve the cube.
 
 ---
 
